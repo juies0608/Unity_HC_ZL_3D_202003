@@ -194,7 +194,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7b3befed654edc04fae0cd95da9c3d16, type: 3}
-    m_FontSize: 40
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
@@ -205,9 +205,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '
-
-    point touch start'
+  m_Text: point touch start
 --- !u!222 &27443959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -306,31 +304,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.63
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.64
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.73
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.03648811
+      value: -0.041917063
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.93923306
+      value: 0.95392793
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08238076
+      value: -0.08430028
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.331245
+      value: -0.28488222
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_RootOrder
@@ -338,15 +336,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 10.307
+      value: 10.645
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 218.78
+      value: 213.08199
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.813
+      value: -1.8620001
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: f14db21b5e70e3d4ab6f0e158099a341, type: 3}
       propertyPath: m_Controller
@@ -810,7 +808,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Black \u9F8D\u4E0D\u7D2F"
+  m_Text: "\u99B4\u9F8D\u4E0D\u7D2F"
 --- !u!222 &1302870305
 CanvasRenderer:
   m_ObjectHideFlags: 0
