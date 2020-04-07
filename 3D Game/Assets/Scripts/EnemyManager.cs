@@ -15,5 +15,9 @@ public class EnemyManager : MonoBehaviour
         enemy1.attack = 999;
         //取得屬性
         print("怪物1號的攻擊力:" + enemy1.attack);
+
+        //設定唯獨屬性會這樣錯誤
+        //enemy2.def = 1;
+        print("怪物2號的防禦力:" + enemy2.def);
     }
 }
