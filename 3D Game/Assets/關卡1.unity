@@ -293,11 +293,11 @@ GameObject:
   - component: {fileID: 345718249}
   - component: {fileID: 345718248}
   m_Layer: 0
-  m_Name: "\u5730\u677F(1)"
+  m_Name: "\u5730\u677F \u7B2C\u4E8C\u584A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!154 &345718248
 TerrainCollider:
@@ -404,6 +404,53 @@ MonoBehaviour:
   B: 100
   v2A: {x: 0, y: 0}
   v2B: {x: 1000, y: 1000}
+--- !u!1 &522718799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522718801}
+  - component: {fileID: 522718800}
+  m_Layer: 0
+  m_Name: "\u904A\u6232\u7BA1\u7406\u5668"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &522718800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522718799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d6133117b0c65841b82a4845cee0c09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrains:
+  - {fileID: 1113771956}
+  - {fileID: 345718250}
+  speedTerrain: 1.5
+--- !u!4 &522718801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522718799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 255.375, y: 15.1875, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714649876
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,11 +562,11 @@ GameObject:
   - component: {fileID: 1113771955}
   - component: {fileID: 1113771954}
   m_Layer: 0
-  m_Name: "\u5730\u677F"
+  m_Name: "\u5730\u677F \u7B2C\u4E00\u584A"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!154 &1113771954
 TerrainCollider:
@@ -1132,6 +1179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   joy: {fileID: 1331777228}
+  cd: 1
+  fierBall: {fileID: 450914207955629028, guid: bba2d1c42e8bd2a41839dfb6f7617b51, type: 3}
 --- !u!4 &2142677172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341,
