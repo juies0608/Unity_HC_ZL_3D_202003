@@ -1180,7 +1180,9 @@ MonoBehaviour:
   speed: 15
   joy: {fileID: 1331777228}
   cd: 1
+  delayFire: 0.5
   fierBall: {fileID: 450914207955629028, guid: bba2d1c42e8bd2a41839dfb6f7617b51, type: 3}
+  speedFireBall: 300
 --- !u!4 &2142677172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: f14db21b5e70e3d4ab6f0e158099a341,

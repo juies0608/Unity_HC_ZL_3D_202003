@@ -10,7 +10,7 @@ public class Dragon : MonoBehaviour
     [Header("攻擊冷卻時間")]
     public float cd = 1;
     [Header("火球生成延遲時間")]
-    public float delayFire = 0.10f;
+    public float delayFire = 0.5f;
     [Header("火球")]
     public GameObject fierBall;
     [Header("火球移動速度"), Range(1, 5000)]
