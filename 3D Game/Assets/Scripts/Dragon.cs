@@ -15,6 +15,9 @@ public class Dragon : MonoBehaviour
     public GameObject fierBall;
     [Header("火球移動速度"), Range(1, 5000)]
     public float speedFireBall = 300;
+    [Header("攻擊力"), Range(1, 5000)]
+    public float attack= 35;
+
 
     //第一種寫法:須要欄位
     //public Transform tra;
@@ -84,6 +87,9 @@ public class Dragon : MonoBehaviour
 
            GameObject temp = Instantiate(fierBall, posFire, Quaternion.identity);            //生成(物件、座標、角度)
                                                                                              //Quaternion.identity Unity 角度類型、零角度
+        temp.AddComponent<Ball>();                              //暫存火球.添加元件<球>()
+        temp.GetComponent<Ball>().damage = attack;              //暫存火球.取得元件<球>().傷害值 = 攻擊力
+
         temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
     }
     private void Start()
