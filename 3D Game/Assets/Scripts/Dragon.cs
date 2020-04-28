@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Dragon : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Dragon : MonoBehaviour
     public float speedFireBall = 300;
     [Header("攻擊力"), Range(1, 5000)]
     public float attack= 35;
+    [Header("補血藥水"), Range(0, 1000)]
+    public float hp=100;
+    [Header("血條")]
+    public Image hpBar;
 
 
     //第一種寫法:須要欄位
@@ -26,6 +31,7 @@ public class Dragon : MonoBehaviour
     /// 動畫控制器
     /// </summary>
     private Animator ani;
+    
     /// <summary>
     /// 計時器
     /// </summary>
@@ -77,6 +83,10 @@ public class Dragon : MonoBehaviour
         }
        
     }
+    /// <summary>
+    /// 延遲生成火球
+    /// </summary>
+    /// <returns></returns>
     private  IEnumerator DelayFireBall()
     {
         yield return new WaitForSeconds(delayFire);
@@ -92,14 +102,61 @@ public class Dragon : MonoBehaviour
 
         temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
     }
+
+    /// <summary>
+    /// 吃掉加速藥水
+    /// </summary>
+    private void EatPropCd()
+    {
+        cd -= 0.5f;
+        cd = Mathf.Clamp(cd, 0, 100);
+    }
+
+    /// <summary>
+    /// 吃掉補血藥水
+    /// </summary>
+    private void EatPropHp()
+    {
+       // hp += 20;
+        //hp = Mathf.Clamp(hp, 0, 100);
+        StartCoroutine(HpBarEffect());
+    }
+
+    private IEnumerator HpBarEffect()
+    {
+        float hpAdd = hp + 20;
+
+        while (hp < hpAdd)
+        {
+            hp++;
+            hp = Mathf.Clamp(hp, 0, 100);
+            hpBar.fillAmount = hp / 100;
+            yield return null;                      //null一禎
+        }
+    }
     private void Start()
     {
         //取得元件<泛型>()
         ani = GetComponent<Animator>();
+        hpBar.fillAmount = hp / 100;
     }
     private void Update()
     {
         Move();
         Attack();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "加速藥水")
+        {
+            EatPropCd();
+            Destroy(other.gameObject);
+        }
+        if (other.tag == "補血藥水")
+        {
+            EatPropHp();
+            Destroy(other.gameObject);
+        }
     }
 }

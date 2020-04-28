@@ -5,7 +5,7 @@ public class Monster : MonoBehaviour
     [Header("怪物資料")]
     public MonsterData data;
     [Header("補血藥水")]
-    public GameObject propHP;
+    public GameObject propHp;
     [Header("加速藥水")]
     public GameObject propCd;
 
@@ -38,7 +38,7 @@ public class Monster : MonoBehaviour
     {
         ani.SetBool("死亡", true);
         DropProp();
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject, 1f);
     }
 
     /// <summary>
@@ -47,8 +47,8 @@ public class Monster : MonoBehaviour
     private void DropProp()
     {
         float rHp = Random.Range(0f, 1f);
-        if (rHp <= 0.3f) Instantiate(propHP, transform.position + Vector3.right * Random.Range(-1f,1f), Quaternion.identity);
+        if (rHp <= 0.3f) Instantiate(propHp, transform.position + Vector3.right * Random.Range(-1f,1f), Quaternion.identity);
         float rCd = Random.Range(0f, 1f);
-        if (rHp <= 0.3f) Instantiate(propHP, transform.position + Vector3.right * Random.Range(-1f, 1f), Quaternion.identity);
+        if (rHp <= 0.3f) Instantiate(propHp, transform.position + Vector3.right * Random.Range(-1f, 1f), Quaternion.identity);
     }
 }
