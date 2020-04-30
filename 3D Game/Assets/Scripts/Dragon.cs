@@ -99,7 +99,7 @@ public class Dragon : MonoBehaviour
                                                                                              //Quaternion.identity Unity 角度類型、零角度
         temp.AddComponent<Ball>();                              //暫存火球.添加元件<球>()
         temp.GetComponent<Ball>().damage = attack;              //暫存火球.取得元件<球>().傷害值 = 攻擊力
-
+        temp.GetComponent<Ball>().type = "玩家"; 
         temp.GetComponent<Rigidbody>().AddForce(0, 0, speedFireBall);
     }
 
@@ -121,7 +121,10 @@ public class Dragon : MonoBehaviour
         //hp = Mathf.Clamp(hp, 0, 100);
         StartCoroutine(HpBarEffect());
     }
-
+    /// <summary>
+    /// 血條增加特效
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator HpBarEffect()
     {
         float hpAdd = hp + 20;
@@ -134,6 +137,22 @@ public class Dragon : MonoBehaviour
             yield return null;                      //null一禎
         }
     }
+
+    /// <summary>
+    /// 受傷
+    /// </summary>
+    /// <param name="damage"></接收到的傷害值>
+    public void Damage(float damage)
+    {
+        hp -= damage;
+        hpBar.fillAmount = hp / 100;
+        if (hp <= 0) Dead();
+    }
+
+    private void Dead()
+    {
+        ani.SetBool("死亡", true);
+    }
     private void Start()
     {
         //取得元件<泛型>()
@@ -142,6 +161,7 @@ public class Dragon : MonoBehaviour
     }
     private void Update()
     {
+        if (ani.GetBool("死亡")) return;
         Move();
         Attack();
     }

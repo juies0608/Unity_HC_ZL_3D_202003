@@ -16,3 +16,6 @@ MonoBehaviour:
   attack: 10
   speed: 1
   propHp: 0
+  propCd: 0
+  cd: 1
+  bulletSpeed: 10
