@@ -4,12 +4,13 @@ using UnityEngine.UI;
 
 public class Dragon : MonoBehaviour
 {
+    public static float cd = 1;
+    public static float hp=100;
+
     [Header("移動速度"), Range(1, 1000)]
     public float speed = 300;
     [Header("虛擬搖桿")]
     public Joystick joy;
-    [Header("攻擊冷卻時間")]
-    public float cd = 1;
     [Header("火球生成延遲時間")]
     public float delayFire = 0.5f;
     [Header("火球")]
@@ -17,9 +18,7 @@ public class Dragon : MonoBehaviour
     [Header("火球移動速度"), Range(1, 5000)]
     public float speedFireBall = 300;
     [Header("攻擊力"), Range(1, 5000)]
-    public float attack= 35;
-    [Header("補血藥水"), Range(0, 1000)]
-    public float hp=100;
+    public float attack= 35;  
     [Header("血條")]
     public Image hpBar;
 
