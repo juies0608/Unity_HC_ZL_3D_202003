@@ -23,6 +23,8 @@ public class Dragon : MonoBehaviour
     [Header("血條")]
     public Image hpBar;
 
+    private GameManager gm;
+
 
     //第一種寫法:須要欄位
     //public Transform tra;
@@ -117,8 +119,6 @@ public class Dragon : MonoBehaviour
     /// </summary>
     private void EatPropHp()
     {
-       // hp += 20;
-        //hp = Mathf.Clamp(hp, 0, 100);
         StartCoroutine(HpBarEffect());
     }
     /// <summary>
@@ -137,6 +137,19 @@ public class Dragon : MonoBehaviour
             yield return null;                      //null一禎
         }
     }
+    private IEnumerator HpBarEffectSub(float damage)
+    {
+        float hpSub = hp - damage;
+        if (hpSub <= 0) Dead();
+
+        while (hp > hpSub)
+        {
+            hp--;
+            hp = Mathf.Clamp(hp, 0, 100);
+            hpBar.fillAmount = hp / 100;
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
 
     /// <summary>
     /// 受傷
@@ -144,20 +157,22 @@ public class Dragon : MonoBehaviour
     /// <param name="damage"></接收到的傷害值>
     public void Damage(float damage)
     {
-        hp -= damage;
-        hpBar.fillAmount = hp / 100;
-        if (hp <= 0) Dead();
+        if (gm.passLv) return;
+        StartCoroutine(HpBarEffectSub(damage));
     }
 
     private void Dead()
     {
-        ani.SetBool("死亡", true);
+        ani.SetBool("死亡",true);
+        gm.Lose();
     }
     private void Start()
     {
         //取得元件<泛型>()
         ani = GetComponent<Animator>();
         hpBar.fillAmount = hp / 100;
+
+        gm = FindObjectOfType<GameManager>();
     }
     private void Update()
     {

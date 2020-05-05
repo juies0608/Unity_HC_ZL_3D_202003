@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,7 +8,40 @@ public class GameManager : MonoBehaviour
     public Transform[] terrains;
     [Header("地板移動速度"), Range(1f, 50f)]
     public float speedTerrain = 1.5f;
+    [Header("畫面物件")]
+    public GameObject pass;
+    public GameObject lose;
 
+    public bool passLv;
+
+    /// <summary>
+    /// 失敗
+    /// </summary>
+    public void Lose()
+    {
+        lose.SetActive(true);
+    }
+    /// <summary>
+    /// 過關
+    /// </summary>
+    public void Win()
+    {
+        passLv = true;
+        pass.SetActive(true);
+    }
+
+    public void NextLv()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
+    public void Replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     /// <summary>
     /// 移動地板
     /// </summary>
